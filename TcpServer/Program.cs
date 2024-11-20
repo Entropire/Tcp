@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System.Diagnostics;
+using System.Net;
 using System.Net.Sockets;
 using System.Text;
 
@@ -37,14 +38,17 @@ public class Program
 
     private async void RunServer()
     {
+        int i = 0;
+        
         Console.WriteLine("Listening for clients");
         try
         {
             while (true)
             {
                 TcpClient client = await listener.AcceptTcpClientAsync();
-                int id = clients.Count;
-                clients.Add(id, client);
+                int id = i++;
+                clients.Add(id++, client);
+        
                 
                 Task.Run(() => ReceiveData(id, client));
                 Console.WriteLine($"Client {id} connected");
@@ -74,7 +78,7 @@ public class Program
         {
             while (true)
             {
-                if (client.Connected)
+                if (!client.Connected)
                     continue;
                 
                 NetworkStream stream = client.GetStream();
@@ -83,7 +87,7 @@ public class Program
 
                 if (bytesRead <= 0)
                     continue;
-                
+
                 data = Encoding.UTF8.GetString(bytes, 0, bytesRead);
                 Console.WriteLine($"client {id}: {data}");
             }

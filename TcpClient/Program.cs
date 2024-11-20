@@ -94,7 +94,6 @@ public class Program
             try
             {
                 NetworkStream stream = client.GetStream();
-        
                 Byte[] data = Encoding.UTF8.GetBytes(message);
                 stream.Write(data, 0, data.Length);
             }
