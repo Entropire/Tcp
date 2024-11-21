@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using System.Net;
+﻿using System.Net;
 using System.Net.Sockets;
 using System.Text;
 
@@ -8,7 +7,7 @@ namespace TcpServer;
 public class Program
 {
     private TcpListener listener;
-    private Dictionary<int, TcpClient> clients = new(); //<int: id, TcpClient: client>
+    private Dictionary<int, TcpClient> clients = new();
     
     public static void Main(string[] args)
     {
@@ -74,34 +73,35 @@ public class Program
         string data;
         int bytesRead;
 
-        try
+        using (client)
         {
-            while (true)
+            if (client.Connected)
             {
-                if (!client.Connected)
-                    continue;
-                
                 NetworkStream stream = client.GetStream();
+                
+                while (true)
+                {
+                    try
+                    {
+                        bytesRead = await stream.ReadAsync(bytes, 0, bytes.Length);
 
-                bytesRead = await stream.ReadAsync(bytes, 0, bytes.Length);
+                        if (bytesRead <= 0)
+                            continue;
 
-                if (bytesRead <= 0)
-                    continue;
-
-                data = Encoding.UTF8.GetString(bytes, 0, bytesRead);
-                Console.WriteLine($"client {id}: {data}");
+                        data = Encoding.UTF8.GetString(bytes, 0, bytesRead);
+                        Console.WriteLine($"client {id}: {data}");
+                    }
+                    catch (IOException ex)
+                    {
+                        Console.WriteLine($"Network error with client {id}: {ex.Message}");
+                        break;
+                    }
+                }
             }
         }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-            throw;
-        }
-        finally
-        {
-            clients.Remove(id);
-            Console.WriteLine($"Client with id {id} disconnected");
-        }
+
+        clients.Remove(id);
+        Console.WriteLine($"Client with id {id} disconnected");
     }
 
     private void SendMessage(int id, string message)
@@ -148,4 +148,3 @@ public class Program
         }
     }
 }
-

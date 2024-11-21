@@ -14,11 +14,13 @@ public class Program
 
     private void Start()
     {
+        string? message;
+        
         ConnectToServer();
         while(runProgram)
         {
-            string message = Console.ReadLine();
-
+            message = Console.ReadLine();
+            
             if (string.IsNullOrEmpty(message))
                 continue;
             
@@ -87,7 +89,7 @@ public class Program
         }
     }
     
-    private void SendMessage(string message)
+    private void SendMessage(string? message)
     {
         if (client.Connected)
         {
@@ -109,4 +111,3 @@ public class Program
         }
     }
 }
-
