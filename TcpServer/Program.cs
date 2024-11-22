@@ -11,6 +11,9 @@ public class Program
     
     public static void Main(string[] args)
     {
+        EventHandler.RegisterEvent(EventTypes.ClientConnected, args => Console.WriteLine($"Client connected with id {args[0]}"));
+        EventHandler.RegisterEvent(EventTypes.ClientDisconnected, args => Console.WriteLine($"Client disconnected with id {args[0]}"));
+        
         Program program = new Program();
         program.Start();
     }
@@ -34,7 +37,7 @@ public class Program
             }
         }
     }
-
+    
     private async void RunServer()
     {
         int i = 0;
@@ -47,10 +50,9 @@ public class Program
                 TcpClient client = await listener.AcceptTcpClientAsync();
                 int id = i++;
                 clients.Add(id++, client);
-        
                 
                 Task.Run(() => ReceiveData(id, client));
-                Console.WriteLine($"Client {id} connected");
+                EventHandler.Invoke(EventTypes.ClientConnected, id);
                 
                 SendMessage(id, "You are connected to the server!");
             }
@@ -89,19 +91,18 @@ public class Program
                             continue;
 
                         data = Encoding.UTF8.GetString(bytes, 0, bytesRead);
-                        Console.WriteLine($"client {id}: {data}");
+                        EventHandler.Invoke(EventTypes.MessageReceived, data);
                     }
                     catch (IOException ex)
                     {
-                        Console.WriteLine($"Network error with client {id}: {ex.Message}");
                         break;
                     }
                 }
             }
         }
-
+    
         clients.Remove(id);
-        Console.WriteLine($"Client with id {id} disconnected");
+        EventHandler.Invoke(EventTypes.ClientDisconnected);
     }
 
     private void SendMessage(int id, string message)

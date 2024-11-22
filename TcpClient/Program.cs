@@ -60,32 +60,28 @@ public class Program
         string data;
         int bytesRead;
 
-        try
+        NetworkStream stream = client.GetStream();
+            
+        while (true)
         {
-            while (true)
+            try
             {
                 if (!client.Connected)
                     continue;
-                
-                NetworkStream stream = client.GetStream();
 
                 bytesRead = await stream.ReadAsync(bytes, 0, bytes.Length);
 
-                if (bytesRead > 0)
-                {
-                    data = Encoding.UTF8.GetString(bytes, 0, bytesRead);
-                    Console.WriteLine($"Server: {data}");
-                }
+                if (bytesRead <= 0)
+                    continue;
+                    
+                data = Encoding.UTF8.GetString(bytes, 0, bytesRead);
+                Console.WriteLine($"Server: {data}");
             }
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-            throw;
-        }
-        finally
-        {
-            Console.WriteLine($"Disconnected from server");
+            catch (IOException ex)
+            {
+                Console.WriteLine($"Disconnected from server");
+                break;
+            }
         }
     }
     
