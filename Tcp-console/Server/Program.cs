@@ -1,23 +1,30 @@
-﻿using System;
-using System.IO;
-using System.Net.Sockets;
-using System.Net;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Text.Json;
+﻿using System.Net;
 
 namespace Server;
 
 internal class Program
 {
 
-    public static void Main(string[] args)
+  public static void Main(string[] args)
+  {
+    CancellationTokenSource cts = new CancellationTokenSource();
+    CancellationToken ct = cts.Token;
+
+    Host host = new Host();
+    host.onMessage += (msg) => Console.WriteLine(msg);
+    host.onConnected += () => host.SendPacket(PacketType.Message, "gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg");
+
+    Client client = new Client();
+    client.onMessage += (msg) => Console.WriteLine(msg);
+    client.onConnected += () => client.SendPacket(PacketType.Message, "gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg");
+
+    host.onReady += () =>
     {
-        new Host().Start();
+      client.Start(IPAddress.Parse("127.0.0.1"), 8080, ct);
+    };
 
-        new Client().Start();
+    host.Start(IPAddress.Parse("127.0.0.1"), 8080, ct);
 
-        Console.ReadLine();
-    }
+    Console.ReadLine();
+  }
 }

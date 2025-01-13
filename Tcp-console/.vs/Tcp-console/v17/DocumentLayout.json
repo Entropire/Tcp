@@ -1,22 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Quinten\\Desktop\\Projects\\Tcp\\Tcp-console\\",
+  "WorkspaceRootPath": "D:\\Projects\\Cs\\Tcp\\Tcp-console\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D63B7A85-E403-4424-866F-876E6BDB0A2F}|Server\\Server.csproj|c:\\users\\quinten\\desktop\\projects\\tcp\\tcp-console\\server\\host.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D63B7A85-E403-4424-866F-876E6BDB0A2F}|Server\\Server.csproj|solutionrelative:server\\host.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D63B7A85-E403-4424-866F-876E6BDB0A2F}|Server\\Server.csproj|c:\\users\\quinten\\desktop\\projects\\tcp\\tcp-console\\server\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D63B7A85-E403-4424-866F-876E6BDB0A2F}|Server\\Server.csproj|solutionrelative:server\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D63B7A85-E403-4424-866F-876E6BDB0A2F}|Server\\Server.csproj|c:\\users\\quinten\\desktop\\projects\\tcp\\tcp-console\\server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D63B7A85-E403-4424-866F-876E6BDB0A2F}|Server\\Server.csproj|d:\\projects\\cs\\tcp\\tcp-console\\server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D63B7A85-E403-4424-866F-876E6BDB0A2F}|Server\\Server.csproj|solutionrelative:server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D63B7A85-E403-4424-866F-876E6BDB0A2F}|Server\\Server.csproj|c:\\users\\quinten\\desktop\\projects\\tcp\\tcp-console\\server\\packet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D63B7A85-E403-4424-866F-876E6BDB0A2F}|Server\\Server.csproj|d:\\projects\\cs\\tcp\\tcp-console\\server\\packet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D63B7A85-E403-4424-866F-876E6BDB0A2F}|Server\\Server.csproj|solutionrelative:server\\packet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D63B7A85-E403-4424-866F-876E6BDB0A2F}|Server\\Server.csproj|d:\\projects\\cs\\tcp\\tcp-console\\server\\host.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D63B7A85-E403-4424-866F-876E6BDB0A2F}|Server\\Server.csproj|solutionrelative:server\\host.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D63B7A85-E403-4424-866F-876E6BDB0A2F}|Server\\Server.csproj|d:\\projects\\cs\\tcp\\tcp-console\\server\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D63B7A85-E403-4424-866F-876E6BDB0A2F}|Server\\Server.csproj|solutionrelative:server\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,58 +26,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Host.cs",
-              "DocumentMoniker": "C:\\Users\\Quinten\\Desktop\\Projects\\Tcp\\Tcp-console\\Server\\Host.cs",
-              "RelativeDocumentMoniker": "Server\\Host.cs",
-              "ToolTip": "C:\\Users\\Quinten\\Desktop\\Projects\\Tcp\\Tcp-console\\Server\\Host.cs",
-              "RelativeToolTip": "Server\\Host.cs",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAiwFYAAAAVAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Packet.cs",
+              "DocumentMoniker": "D:\\Projects\\Cs\\Tcp\\Tcp-console\\Server\\Packet.cs",
+              "RelativeDocumentMoniker": "Server\\Packet.cs",
+              "ToolTip": "D:\\Projects\\Cs\\Tcp\\Tcp-console\\Server\\Packet.cs",
+              "RelativeToolTip": "Server\\Packet.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-10T10:40:59.443Z",
+              "WhenOpened": "2025-01-11T16:55:18.86Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Client.cs",
-              "DocumentMoniker": "C:\\Users\\Quinten\\Desktop\\Projects\\Tcp\\Tcp-console\\Server\\Client.cs",
-              "RelativeDocumentMoniker": "Server\\Client.cs",
-              "ToolTip": "C:\\Users\\Quinten\\Desktop\\Projects\\Tcp\\Tcp-console\\Server\\Client.cs",
-              "RelativeToolTip": "Server\\Client.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAwwEQAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Projects\\Cs\\Tcp\\Tcp-console\\Server\\Program.cs",
+              "RelativeDocumentMoniker": "Server\\Program.cs",
+              "ToolTip": "D:\\Projects\\Cs\\Tcp\\Tcp-console\\Server\\Program.cs",
+              "RelativeToolTip": "Server\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-10T10:40:50.139Z",
+              "WhenOpened": "2025-01-11T16:38:43.668Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Packet.cs",
-              "DocumentMoniker": "C:\\Users\\Quinten\\Desktop\\Projects\\Tcp\\Tcp-console\\Server\\Packet.cs",
-              "RelativeDocumentMoniker": "Server\\Packet.cs",
-              "ToolTip": "C:\\Users\\Quinten\\Desktop\\Projects\\Tcp\\Tcp-console\\Server\\Packet.cs",
-              "RelativeToolTip": "Server\\Packet.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "Client.cs",
+              "DocumentMoniker": "D:\\Projects\\Cs\\Tcp\\Tcp-console\\Server\\Client.cs",
+              "RelativeDocumentMoniker": "Server\\Client.cs",
+              "ToolTip": "D:\\Projects\\Cs\\Tcp\\Tcp-console\\Server\\Client.cs",
+              "RelativeToolTip": "Server\\Client.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAqwBMAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-10T10:40:23.914Z",
+              "WhenOpened": "2025-01-11T15:58:52.294Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Quinten\\Desktop\\Projects\\Tcp\\Tcp-console\\Server\\Program.cs",
-              "RelativeDocumentMoniker": "Server\\Program.cs",
-              "ToolTip": "C:\\Users\\Quinten\\Desktop\\Projects\\Tcp\\Tcp-console\\Server\\Program.cs",
-              "RelativeToolTip": "Server\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Title": "Host.cs",
+              "DocumentMoniker": "D:\\Projects\\Cs\\Tcp\\Tcp-console\\Server\\Host.cs",
+              "RelativeDocumentMoniker": "Server\\Host.cs",
+              "ToolTip": "D:\\Projects\\Cs\\Tcp\\Tcp-console\\Server\\Host.cs",
+              "RelativeToolTip": "Server\\Host.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAswBYAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-10T10:25:36.856Z",
+              "WhenOpened": "2025-01-10T16:06:42.496Z",
               "EditorCaption": ""
             }
           ]

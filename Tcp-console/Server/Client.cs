@@ -1,102 +1,117 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace Server;
 
 internal class Client
 {
-    public Action<String> onMessage;
+  public event Action onConnected;
+  public event Action<string> onMessage;
 
-    private TcpClient client;
+  private TcpClient client;
+  private NetworkStream stream;
 
-    public void Start() => new Thread(StartTcpClient).Start();
+  public void Start(IPAddress ip, ushort port, CancellationToken ct)
+  {
+    Thread thread = new Thread(() => StartAsync(ip, port, ct));
+    onMessage?.Invoke("client: Starting new thread for client!");
+    thread.Start();
+  }
 
-    private async void StartTcpClient()
+  private void StartAsync(IPAddress ip, ushort port, CancellationToken ct)
+  {
+    try
     {
-        onMessage += (msg) => Console.WriteLine($"[Client]: {msg}");
+      client = new TcpClient();
+      client.Connect(ip, port);
+      stream = client.GetStream();
 
-        try
-        {
-            onMessage?.Invoke("Connecting to the server...");
-            client = new TcpClient();
-            await client.ConnectAsync("127.0.0.1", 8080);
-            onMessage?.Invoke("Connected!");
-            await RecievePackets();
-        }
-        catch (Exception e)
-        {
-            onMessage?.Invoke(e.Message);
-        }
-        finally
-        {
-            client.Close();
-            onMessage?.Invoke("Disconnected!");
-        }
+      onMessage?.Invoke($"client: Connecting to {ip}:{port}");
+      onConnected?.Invoke();
+
+      SendPacket(PacketType.Message, "You are connected to the client!");
+      ListenForPackets(client, ct);
+    }
+    catch (SocketException ex)
+    {
+      Console.WriteLine($"Unable to connect: {ex.Message}");
+    }
+    catch (ArgumentException ex)
+    {
+      Console.WriteLine($"Invalid IP or port: {ex.Message}");
+    }
+    catch (Exception ex)
+    {
+      Console.WriteLine(ex.Message);
+    }
+    finally
+    {
+      client?.Dispose();
+    }
+  }
+
+  private async void ListenForPackets(TcpClient client, CancellationToken ct)
+  {
+    onMessage?.Invoke("client: Listening for incoming packets");
+    while (true)
+    {
+      if (ct.IsCancellationRequested || !client.Connected)
+      {
+        break;
+      }
+
+      if (!stream.DataAvailable)
+      {
+        Task.Delay(100);
+        continue;
+      }
+
+      Packet packet = await ReadPacket(stream);
+      Console.WriteLine($"[{packet.type}] Host: {packet.message}");
+    }
+  }
+
+  private async Task<Packet> ReadPacket(Stream stream)
+  {
+    byte[] lenghtBuffer = new byte[4];
+    stream.Read(lenghtBuffer, 0, 4);
+    int messageLenth = BitConverter.ToInt32(lenghtBuffer, 0);
+
+    byte[] messageBuffer = new byte[messageLenth];
+    int totalBytesRead = 0;
+
+    while (totalBytesRead < messageLenth)
+    {
+      int bytesRead = stream.Read(messageBuffer, totalBytesRead, messageLenth - totalBytesRead);
+
+      if (bytesRead == 0)
+      {
+        break;
+      }
+
+      totalBytesRead += bytesRead;
     }
 
-    private async Task RecievePackets()
+    string jsonString = Encoding.UTF8.GetString(messageBuffer);
+
+    return JsonSerializer.Deserialize<Packet>(jsonString);
+  }
+
+  public void SendPacket(PacketType packetType, String packetData)
+  {
+    if (client == null || !client.Connected)
     {
-        onMessage?.Invoke("Listening for packets");
-        byte[] bytes = new byte[1024];
-
-        NetworkStream stream = client.GetStream();
-
-        while (true)
-        {
-            try
-            {
-                if (!client.Connected)
-                    continue;
-
-                var bytesRead = await stream.ReadAsync(bytes, 0, bytes.Length);
-
-                if (bytesRead <= 0)
-                    continue;
-
-                string data = Encoding.UTF8.GetString(bytes, 0, bytesRead);
-
-
-                Packet packet = JsonSerializer.Deserialize<Packet>(data);
-                if (packet != null)
-                {
-                    onMessage?.Invoke($"Server: [{packet.type}] {packet.data}");
-                }
-
-            }
-            catch (IOException e)
-            {
-                onMessage?.Invoke(e.Message);
-                break;
-            }
-        }
+      return;
     }
 
-    public void SendPacket(PacketType packetType, string packetData)
-    {
-        if (client.Connected)
-        {
-            try
-            {
-                Packet packet = new Packet(packetType, packetData);
-                byte[] data = Encoding.UTF8.GetBytes(JsonSerializer.Serialize(packet));
+    Packet packet = new Packet(packetType, packetData);
+    byte[] messageBuffer = Encoding.UTF8.GetBytes(JsonSerializer.Serialize(packet));
 
-                NetworkStream stream = client.GetStream();
-                stream.Write(data, 0, data.Length);
-            }
-            catch (Exception e)
-            {
-                onMessage?.Invoke($"failed to send message to the server: {e}");
-                throw;
-            }
-        }
-        else
-        {
-            onMessage?.Invoke("Disconnected from server");
-        }
-    }
+    byte[] lenghtBuffer = BitConverter.GetBytes(messageBuffer.Length);
+  
+    stream.Write(lenghtBuffer, 0, lenghtBuffer.Length);
+    stream.Write(messageBuffer, 0, messageBuffer.Length);
+  }
 }
