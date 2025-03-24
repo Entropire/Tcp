@@ -9,7 +9,7 @@ namespace TCP_UDP_test.Networking.UDP
   {
     private UdpClient _UdpClient;
     private bool RevieveDataActive = false;
-
+    
     public void Start()
     {
       _UdpClient = new UdpClient(9876);
