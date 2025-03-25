@@ -87,7 +87,7 @@ internal class Host : Client
         break;
       }
 
-      if (!stream.DataAvailable)
+      if (! .DataAvailable)
       {
         Task.Delay(100);
         continue;

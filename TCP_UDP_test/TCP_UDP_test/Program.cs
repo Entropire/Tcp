@@ -1,4 +1,5 @@
-﻿using System.Security;
+﻿using System.Net.Sockets;
+using System.Security;
 using System.Text;
 using System.Text.Json;
 using System.Text.Unicode;
@@ -11,35 +12,55 @@ namespace TCP_UDP_test
 {
   internal class Program
   {
+    TcpClient tcpClient; 
+
     static void Main(string[] args) => new Program().Run();
 
     private void Run()
     {
-      PacketHandler.Subscribe(PacketType.LobbyInfo, (content) =>
+      while (true)
       {
-        if (content != null)
+        string input = Console.ReadLine();
+
+        if (input.StartsWith("/"))
         {
-          LobbyInfo lobbyInfo = JsonSerializer.Deserialize<LobbyInfo>(content);
-          Console.WriteLine($"Name: {lobbyInfo.name}, Description: {lobbyInfo.description}, IP: {lobbyInfo.ip}, Port: {lobbyInfo.port}");
+
         }
-      });
-
-      string command = Console.ReadLine();
-
-      if (command.Equals("client"))
-      {
-        UDPReciever uDPReciever = new UDPReciever();
-        uDPReciever.Start();
+        else
+        {
+          
+        }
       }
+    }
 
-      if (command.Equals("server"))
-      {
-        LobbyInfo lobbyInfo = new LobbyInfo("test", "This is a test lobby", "192.0.0.192", 8080);
-        UDPbroadcaster uDPbroadcaster = new UDPbroadcaster(lobbyInfo);
-        uDPbroadcaster.Start();
-      }
+    public void StartServer()
+    {
+      LobbyInfo lobbyInfo = new LobbyInfo("test", "This is a test lobby", "192.0.0.192", 8080);
+      UDPbroadcaster uDPbroadcaster = new UDPbroadcaster(lobbyInfo);
+      uDPbroadcaster.Start();
+    }
 
-      Console.ReadLine();
+    public void StartClient()
+    {
+      UDPReciever uDPReciever = new UDPReciever();
+      uDPReciever.Start();
     }
   }
 }
+
+//PacketHandler.Subscribe(PacketType.LobbyInfo, (content) =>
+//{
+//  if (content != null)
+//  {
+//    LobbyInfo lobbyInfo = JsonSerializer.Deserialize<LobbyInfo>(content);
+//    Console.WriteLine($"Name: {lobbyInfo.name}, Description: {lobbyInfo.description}, IP: {lobbyInfo.ip}, Port: {lobbyInfo.port}");
+//  }
+//});
+
+//PacketHandler.Subscribe(PacketType.Message, (content) =>
+//{
+//  if (content != null)
+//  {
+//    Console.WriteLine(content);
+//  }
+//});

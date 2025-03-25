@@ -53,28 +53,57 @@ namespace TCP_UDP_test.Networking.TCP
     private async Task ListenForPackets(TcpClient client)
     {
       NetworkStream stream = client.GetStream();
-      byte[] buffer = new byte[1024];
       while (HandleClients)
       {
-        try
+        if (!client.Connected)
         {
-          int bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length);
-          if (bytesRead > 0)
-          {
-            Packet packet = JsonSerializer.Deserialize<Packet>(Encoding.UTF8.GetString(buffer, 0, bytesRead));
-            if (packet != null)
-            {
-
-            }
-          }
-        }
-        catch (Exception ex)
-        {
-          Console.WriteLine($"Error reading from client: {ex.Message}");
           break;
+        }
+
+        if (!stream.DataAvailable)
+        {
+          await Task.Delay(100);
+          continue;
+        }
+
+        Packet packet = await ReadPacket(stream);
+        if (packet != null)
+        {
+          PacketHandler.TriggerEventForPacket(packet);
         }
       }
       client.Close();
+    }
+
+    private async Task<Packet> ReadPacket(Stream stream)
+    {
+      try
+      {
+        byte[] lenghtBuffer = new byte[4];
+        stream.Read(lenghtBuffer, 0, 4);
+        int messageLenth = BitConverter.ToInt32(lenghtBuffer, 0);
+
+        byte[] messageBuffer = new byte[messageLenth];
+        int totalBytesRead = 0;
+
+        while (totalBytesRead < messageLenth)
+        {
+          int bytesRead = stream.Read(messageBuffer, totalBytesRead, messageLenth - totalBytesRead);
+
+          if (bytesRead == 0)
+          {
+            break;
+          }
+
+          totalBytesRead += bytesRead;
+        }
+        string jsonString = Encoding.UTF8.GetString(messageBuffer);
+        return JsonSerializer.Deserialize<Packet>(jsonString);
+      }
+      catch (Exception ex)
+      {
+        return null;
+      }
     }
   }
 }

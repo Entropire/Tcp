@@ -3,5 +3,6 @@
   internal enum PacketType
   {
     LobbyInfo,
+    Message
   };
 }

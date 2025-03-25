@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\Cs\\Tcp\\Tcp-console\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{D63B7A85-E403-4424-866F-876E6BDB0A2F}|Server\\Server.csproj|d:\\cs\\tcp\\tcp-console\\server\\host.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D63B7A85-E403-4424-866F-876E6BDB0A2F}|Server\\Server.csproj|solutionrelative:server\\host.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D63B7A85-E403-4424-866F-876E6BDB0A2F}|Server\\Server.csproj|d:\\cs\\tcp\\tcp-console\\server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D63B7A85-E403-4424-866F-876E6BDB0A2F}|Server\\Server.csproj|solutionrelative:server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -22,8 +26,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Host.cs",
+              "DocumentMoniker": "D:\\Cs\\Tcp\\Tcp-console\\Server\\Host.cs",
+              "RelativeDocumentMoniker": "Server\\Host.cs",
+              "ToolTip": "D:\\Cs\\Tcp\\Tcp-console\\Server\\Host.cs",
+              "RelativeToolTip": "Server\\Host.cs",
+              "ViewState": "AgIAAG0AAAAAAAAAAAAcwHsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-25T11:30:17.705Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
@@ -34,7 +51,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Packet.cs",
               "DocumentMoniker": "D:\\Cs\\Tcp\\Tcp-console\\Server\\Packet.cs",
               "RelativeDocumentMoniker": "Server\\Packet.cs",
@@ -46,7 +63,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Cs\\Tcp\\Tcp-console\\Server\\Program.cs",
               "RelativeDocumentMoniker": "Server\\Program.cs",
@@ -59,7 +76,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Client.cs",
               "DocumentMoniker": "D:\\Cs\\Tcp\\Tcp-console\\Server\\Client.cs",
               "RelativeDocumentMoniker": "Server\\Client.cs",
