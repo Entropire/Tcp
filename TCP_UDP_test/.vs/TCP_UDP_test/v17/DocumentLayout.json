@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "D:\\Cs\\Tcp\\TCP_UDP_test\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{DCE12F78-94A3-40EE-9B0A-6C79F81E2DF5}|TCP_UDP_test\\TCP_UDP_test.csproj|d:\\cs\\tcp\\tcp_udp_test\\tcp_udp_test\\networking\\tcp\\tcpserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCE12F78-94A3-40EE-9B0A-6C79F81E2DF5}|TCP_UDP_test\\TCP_UDP_test.csproj|solutionrelative:tcp_udp_test\\networking\\tcp\\tcpserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCE12F78-94A3-40EE-9B0A-6C79F81E2DF5}|TCP_UDP_test\\TCP_UDP_test.csproj|d:\\cs\\tcp\\tcp_udp_test\\tcp_udp_test\\commands\\consolecommands\\startlobbycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCE12F78-94A3-40EE-9B0A-6C79F81E2DF5}|TCP_UDP_test\\TCP_UDP_test.csproj|solutionrelative:tcp_udp_test\\commands\\consolecommands\\startlobbycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCE12F78-94A3-40EE-9B0A-6C79F81E2DF5}|TCP_UDP_test\\TCP_UDP_test.csproj|d:\\cs\\tcp\\tcp_udp_test\\tcp_udp_test\\commands\\consolecommands\\getlobbies.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCE12F78-94A3-40EE-9B0A-6C79F81E2DF5}|TCP_UDP_test\\TCP_UDP_test.csproj|solutionrelative:tcp_udp_test\\commands\\consolecommands\\getlobbies.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DCE12F78-94A3-40EE-9B0A-6C79F81E2DF5}|TCP_UDP_test\\TCP_UDP_test.csproj|d:\\cs\\tcp\\tcp_udp_test\\tcp_udp_test\\commands\\consolecommands\\stopgetlobbies.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DCE12F78-94A3-40EE-9B0A-6C79F81E2DF5}|TCP_UDP_test\\TCP_UDP_test.csproj|solutionrelative:tcp_udp_test\\commands\\consolecommands\\stopgetlobbies.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,24 +23,8 @@
       "RelativeMoniker": "D:0:0:{DCE12F78-94A3-40EE-9B0A-6C79F81E2DF5}|TCP_UDP_test\\TCP_UDP_test.csproj|solutionrelative:tcp_udp_test\\commands\\consolecommands\\stopcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCE12F78-94A3-40EE-9B0A-6C79F81E2DF5}|TCP_UDP_test\\TCP_UDP_test.csproj|d:\\cs\\tcp\\tcp_udp_test\\tcp_udp_test\\commands\\consolecommands\\startlobbycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DCE12F78-94A3-40EE-9B0A-6C79F81E2DF5}|TCP_UDP_test\\TCP_UDP_test.csproj|solutionrelative:tcp_udp_test\\commands\\consolecommands\\startlobbycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DCE12F78-94A3-40EE-9B0A-6C79F81E2DF5}|TCP_UDP_test\\TCP_UDP_test.csproj|d:\\cs\\tcp\\tcp_udp_test\\tcp_udp_test\\commands\\consolecommands\\stoplobbycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DCE12F78-94A3-40EE-9B0A-6C79F81E2DF5}|TCP_UDP_test\\TCP_UDP_test.csproj|solutionrelative:tcp_udp_test\\commands\\consolecommands\\stoplobbycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DCE12F78-94A3-40EE-9B0A-6C79F81E2DF5}|TCP_UDP_test\\TCP_UDP_test.csproj|d:\\cs\\tcp\\tcp_udp_test\\tcp_udp_test\\networking\\networkhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DCE12F78-94A3-40EE-9B0A-6C79F81E2DF5}|TCP_UDP_test\\TCP_UDP_test.csproj|solutionrelative:tcp_udp_test\\networking\\networkhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DCE12F78-94A3-40EE-9B0A-6C79F81E2DF5}|TCP_UDP_test\\TCP_UDP_test.csproj|d:\\cs\\tcp\\tcp_udp_test\\tcp_udp_test\\commands\\consolecommands\\getlobbies.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DCE12F78-94A3-40EE-9B0A-6C79F81E2DF5}|TCP_UDP_test\\TCP_UDP_test.csproj|solutionrelative:tcp_udp_test\\commands\\consolecommands\\getlobbies.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DCE12F78-94A3-40EE-9B0A-6C79F81E2DF5}|TCP_UDP_test\\TCP_UDP_test.csproj|d:\\cs\\tcp\\tcp_udp_test\\tcp_udp_test\\networking\\tcp\\tcpserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DCE12F78-94A3-40EE-9B0A-6C79F81E2DF5}|TCP_UDP_test\\TCP_UDP_test.csproj|solutionrelative:tcp_udp_test\\networking\\tcp\\tcpserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DCE12F78-94A3-40EE-9B0A-6C79F81E2DF5}|TCP_UDP_test\\TCP_UDP_test.csproj|d:\\cs\\tcp\\tcp_udp_test\\tcp_udp_test\\commands\\commandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -46,24 +42,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "NetworkHandler.cs",
-              "DocumentMoniker": "D:\\Cs\\Tcp\\TCP_UDP_test\\TCP_UDP_test\\Networking\\NetworkHandler.cs",
-              "RelativeDocumentMoniker": "TCP_UDP_test\\Networking\\NetworkHandler.cs",
-              "ToolTip": "D:\\Cs\\Tcp\\TCP_UDP_test\\TCP_UDP_test\\Networking\\NetworkHandler.cs",
-              "RelativeToolTip": "TCP_UDP_test\\Networking\\NetworkHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T16:48:06.462Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "StopGetLobbies.cs",
               "DocumentMoniker": "D:\\Cs\\Tcp\\TCP_UDP_test\\TCP_UDP_test\\Commands\\ConsoleCommands\\StopGetLobbies.cs",
               "RelativeDocumentMoniker": "TCP_UDP_test\\Commands\\ConsoleCommands\\StopGetLobbies.cs",
@@ -76,7 +67,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "GetLobbies.cs",
               "DocumentMoniker": "D:\\Cs\\Tcp\\TCP_UDP_test\\TCP_UDP_test\\Commands\\ConsoleCommands\\GetLobbies.cs",
               "RelativeDocumentMoniker": "TCP_UDP_test\\Commands\\ConsoleCommands\\GetLobbies.cs",
@@ -89,28 +80,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "TCPServer.cs",
               "DocumentMoniker": "D:\\Cs\\Tcp\\TCP_UDP_test\\TCP_UDP_test\\Networking\\TCP\\TCPServer.cs",
               "RelativeDocumentMoniker": "TCP_UDP_test\\Networking\\TCP\\TCPServer.cs",
               "ToolTip": "D:\\Cs\\Tcp\\TCP_UDP_test\\TCP_UDP_test\\Networking\\TCP\\TCPServer.cs",
               "RelativeToolTip": "TCP_UDP_test\\Networking\\TCP\\TCPServer.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAowB4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAcwB4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-25T16:43:37.332Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:129:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "CommandHandler.cs",
               "DocumentMoniker": "D:\\Cs\\Tcp\\TCP_UDP_test\\TCP_UDP_test\\Commands\\CommandHandler.cs",
               "RelativeDocumentMoniker": "TCP_UDP_test\\Commands\\CommandHandler.cs",
@@ -118,12 +101,11 @@
               "RelativeToolTip": "TCP_UDP_test\\Commands\\CommandHandler.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T16:36:33.723Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-25T16:36:33.723Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "StopCommand.cs",
               "DocumentMoniker": "D:\\Cs\\Tcp\\TCP_UDP_test\\TCP_UDP_test\\Commands\\ConsoleCommands\\StopCommand.cs",
               "RelativeDocumentMoniker": "TCP_UDP_test\\Commands\\ConsoleCommands\\StopCommand.cs",
@@ -131,12 +113,11 @@
               "RelativeToolTip": "TCP_UDP_test\\Commands\\ConsoleCommands\\StopCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T16:28:07.56Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-25T16:28:07.56Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "CommandNameAttribute.cs",
               "DocumentMoniker": "D:\\Cs\\Tcp\\TCP_UDP_test\\TCP_UDP_test\\Commands\\CommandNameAttribute.cs",
               "RelativeDocumentMoniker": "TCP_UDP_test\\Commands\\CommandNameAttribute.cs",
@@ -144,12 +125,11 @@
               "RelativeToolTip": "TCP_UDP_test\\Commands\\CommandNameAttribute.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T16:27:27.772Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-25T16:27:27.772Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "StopLobbyCommand.cs",
               "DocumentMoniker": "D:\\Cs\\Tcp\\TCP_UDP_test\\TCP_UDP_test\\Commands\\ConsoleCommands\\StopLobbyCommand.cs",
               "RelativeDocumentMoniker": "TCP_UDP_test\\Commands\\ConsoleCommands\\StopLobbyCommand.cs",
@@ -157,12 +137,11 @@
               "RelativeToolTip": "TCP_UDP_test\\Commands\\ConsoleCommands\\StopLobbyCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T16:27:18.172Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-25T16:27:18.172Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "StartLobbyCommand.cs",
               "DocumentMoniker": "D:\\Cs\\Tcp\\TCP_UDP_test\\TCP_UDP_test\\Commands\\ConsoleCommands\\StartLobbyCommand.cs",
               "RelativeDocumentMoniker": "TCP_UDP_test\\Commands\\ConsoleCommands\\StartLobbyCommand.cs",
