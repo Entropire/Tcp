@@ -3,12 +3,14 @@ using System.Net.Sockets;
 using System.Text;
 using System.Text.Json;
 using TCP_UDP_test.Models;
+using TCP_UDP_test.Networking.UDP;
 
 namespace TCP_UDP_test.Networking.TCP
 {
   internal class TCPServer : INetworkHandler
   {
     private TcpListener _TcpListener;
+    private UDPbroadcaster _UDPBroadcaster;
     private LobbyInfo LobbyInfo;
     private bool HandleClients;
 
@@ -21,12 +23,15 @@ namespace TCP_UDP_test.Networking.TCP
     {
       _TcpListener = new TcpListener(IPAddress.Parse(LobbyInfo.ip), LobbyInfo.port);
       _TcpListener.Start();
+      _UDPBroadcaster = new UDPbroadcaster(LobbyInfo);
+      _UDPBroadcaster.Start();
       HandleClients = true;
       ListenForClients();
     }
 
     public void Stop()
     {
+      _UDPBroadcaster?.Stop();
       HandleClients = false;
       _TcpListener?.Dispose(); ;
     }

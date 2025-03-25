@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TCP_UDP_test.Commands
+namespace TCP_UDP_test.Commands.ConsoleCommands
 {
-  internal interface ICommand
+  [CommandName("StopGetLobbies")]
+  internal class StopGetLobbies
   {
-    public void Execute(string[] args);
+
   }
 }

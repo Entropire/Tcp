@@ -8,7 +8,7 @@ namespace TCP_UDP_test.Networking.TCP
 {
   internal class TCPClient : INetworkHandler
   {
-    private TcpClient _TCPClient;
+    private TcpClient? _TCPClient;
     private LobbyInfo LobbyInfo;
     private bool HandleServer;
 

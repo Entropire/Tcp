@@ -2,7 +2,7 @@
 
 namespace TCP_UDP_test.Commands
 {
-  internal abstract class Command : ICommand
+  internal abstract class Command 
   {
     protected Command()
     {
