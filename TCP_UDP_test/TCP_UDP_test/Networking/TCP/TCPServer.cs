@@ -21,7 +21,7 @@ namespace TCP_UDP_test.Networking.TCP
 
     public void Start()
     {
-      _TcpListener = new TcpListener(IPAddress.Parse(LobbyInfo.ip), LobbyInfo.port);
+      _TcpListener = new TcpListener(new IPAddress(LobbyInfo.Ip), LobbyInfo.Port);
       _TcpListener.Start();
       _UDPBroadcaster = new UDPbroadcaster(LobbyInfo);
       _UDPBroadcaster.Start();

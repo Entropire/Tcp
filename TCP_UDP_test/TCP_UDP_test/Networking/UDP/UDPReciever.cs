@@ -7,7 +7,7 @@ namespace TCP_UDP_test.Networking.UDP
 {
   internal class UDPReciever : INetworkHandler
   {
-    private UdpClient _UdpClient;
+    private UdpClient? _UdpClient;
     private bool RevieveDataActive = false;
     
     public void Start()

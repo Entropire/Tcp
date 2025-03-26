@@ -5,11 +5,11 @@ namespace TCP_UDP_test.Commands
   [AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = false)]
   public class CommandNameAttribute : Attribute
   {
-    public string Name { get; }
+    public string[] Names { get; }
 
-    public CommandNameAttribute(string name)
+    public CommandNameAttribute(params string[] names)
     {
-      Name = name;
+      Names = names;
     }
   }
 }

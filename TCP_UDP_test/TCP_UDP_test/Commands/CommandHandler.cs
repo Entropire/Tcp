@@ -6,21 +6,31 @@ namespace TCP_UDP_test.Commands
   {
     private static Dictionary<string, Command> commandList = new Dictionary<string, Command>();
 
-    static CommandHandler()
+    public static void InitializeCommands()
     {
       foreach (Type commandType in GetClassesImplementingInterface(typeof(Command)))
       {
-        if (commandType.BaseType == typeof(Command))
+        if (commandType.BaseType != typeof(Command)) continue;
+
+        Command? command = Activator.CreateInstance(commandType) as Command;
+        var attribute = commandType.GetCustomAttribute<CommandNameAttribute>();
+
+        if (command == null || attribute == null)
         {
-          Command? command = Activator.CreateInstance(commandType) as Command;
-          string commandName = commandType.GetCustomAttribute<CommandNameAttribute>().Name.ToLower();
+          continue;
+        }
 
-          if (command == null)
+        foreach (string name in attribute.Names)
+        {
+          string lowerName = name.ToLower();
+          if (!commandList.ContainsKey(lowerName))
           {
-            continue;
+            commandList.Add(lowerName, command);
           }
-
-          commandList.Add(commandName, command);
+          else
+          {
+            Console.WriteLine($"Warning: Duplicate command name '{lowerName}' ignored.");
+          }
         }
       }
     }

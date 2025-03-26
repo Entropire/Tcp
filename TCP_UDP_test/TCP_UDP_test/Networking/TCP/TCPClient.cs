@@ -20,7 +20,7 @@ namespace TCP_UDP_test.Networking.TCP
     public void Start()
     {
       _TCPClient = new TcpClient();
-      _TCPClient.Connect(IPAddress.Parse(LobbyInfo.ip), LobbyInfo.port);
+      _TCPClient.Connect(new IPAddress(LobbyInfo.Ip), LobbyInfo.Port);
       HandleServer = true;
       _ = ListenForPackets();
     }

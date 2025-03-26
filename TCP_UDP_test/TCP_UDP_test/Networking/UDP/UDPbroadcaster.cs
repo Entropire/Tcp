@@ -42,6 +42,7 @@ namespace TCP_UDP_test.Networking.UDP
       while (BroadcastActive)
       {
         _UdpClient.Send(data, data.Length, broadcastEndPoint);
+        Console.WriteLine("send lobby info");
         await Task.Delay(1000);
       }
     }
