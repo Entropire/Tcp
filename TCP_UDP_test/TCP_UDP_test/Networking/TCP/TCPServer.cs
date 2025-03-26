@@ -1,4 +1,5 @@
 ﻿using System.Net;
+using System.Net.Http;
 using System.Net.Sockets;
 using System.Text;
 using System.Text.Json;
@@ -26,6 +27,7 @@ namespace TCP_UDP_test.Networking.TCP
       _UDPBroadcaster = new UDPbroadcaster(LobbyInfo);
       _UDPBroadcaster.Start();
       HandleClients = true;
+      Console.WriteLine("listening for clients");
       ListenForClients();
     }
 
@@ -90,7 +92,7 @@ namespace TCP_UDP_test.Networking.TCP
 
         byte[] messageBuffer = new byte[messageLenth];
         int totalBytesRead = 0;
-
+        Console.WriteLine("message recieved");
         while (totalBytesRead < messageLenth)
         {
           int bytesRead = stream.Read(messageBuffer, totalBytesRead, messageLenth - totalBytesRead);
@@ -109,6 +111,11 @@ namespace TCP_UDP_test.Networking.TCP
       {
         return null;
       }
+    }
+
+    public void SendPackage(Packet packet)
+    {
+
     }
   }
 }

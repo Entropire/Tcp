@@ -39,5 +39,9 @@ namespace TCP_UDP_test.Networking.UDP
         }
       }
     }
+    public void SendPackage(Packet packet)
+    {
+
+    }
   }
 }

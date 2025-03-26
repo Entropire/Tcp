@@ -8,8 +8,6 @@ namespace TCP_UDP_test.Models
     public PacketType PacketType { get; init; }
     public string Content { get; init; }
 
-    public Packet() { }
-
     public Packet(int version, PacketType packetType, string content)
     {
       if (version <= 0)

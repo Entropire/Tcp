@@ -37,6 +37,7 @@ namespace TCP_UDP_test.Networking
     public static void SendPackage(Packet packet)
     {
       if (OpenNetwork == null) return;
+      OpenNetwork.SendPackage(packet);
     }
   }
 }

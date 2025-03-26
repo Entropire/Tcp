@@ -85,5 +85,21 @@ namespace TCP_UDP_test.Networking.TCP
         return null;
       }
     }
+
+    public void SendPackage(Packet packet)
+    {
+      if (_TCPClient != null && _TCPClient.Connected)
+      {
+        Stream stream = _TCPClient.GetStream();
+        string jsonString = JsonSerializer.Serialize(packet);
+        byte[] bytes = Encoding.UTF8.GetBytes(jsonString);
+
+        byte[] headerBytes = BitConverter.GetBytes(bytes.Length);
+        stream.Write(headerBytes, 0, headerBytes.Length);
+
+        stream.Write(bytes, 0, bytes.Length);
+        Console.WriteLine("send message");
+      }
+    }
   }
 }

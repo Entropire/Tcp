@@ -1,5 +1,6 @@
 ﻿using TCP_UDP_test.Commands;
 using TCP_UDP_test.Enums;
+using TCP_UDP_test.Models;
 using TCP_UDP_test.Networking;
 
 namespace TCP_UDP_test
@@ -12,7 +13,7 @@ namespace TCP_UDP_test
     {
       CommandHandler.InitializeCommands();
 
-      PacketHandler.Subscribe(PacketType.LobbyInfo, (msg) => Console.WriteLine(msg));
+      PacketHandler.Subscribe(PacketType.Message, (msg) => Console.WriteLine(msg));
 
       string? input;
       string[] args;
@@ -20,15 +21,19 @@ namespace TCP_UDP_test
       {
         input = Console.ReadLine();
 
-        if (input != null && input.StartsWith("/"))
+        if (input != null)
         {
-          input = input.Replace("/", "");
-          args = input.Split(' ');
-          CommandHandler.executeCommand(args[0].ToLower(), args);
-        }
-        else
-        {
-
+          if (input.StartsWith("/"))
+          {
+            input = input.Replace("/", "");
+            args = input.Split(' ');
+            CommandHandler.executeCommand(args[0].ToLower(), args);
+          }
+          else
+          {
+            Packet packet = new Packet(1, PacketType.Message, input);
+            NetworkHandler.SendPackage(packet);
+          }
         }
       }
     }
