@@ -32,7 +32,7 @@ namespace TCP_UDP_test
           else
           {
             Packet packet = new Packet(1, PacketType.Message, input);
-            NetworkHandler.SendPackage(packet);
+            Network.SendPackage(packet);
           }
         }
       }

@@ -11,14 +11,13 @@ namespace TCP_UDP_test.Networking.UDP
   {
     private UdpClient _UdpClient;
     private bool BroadcastActive = false;
-    private LobbyInfo LobbyInfo;
+    private LobbyInfo _LobbyInfo;
 
-    internal UDPbroadcaster(LobbyInfo lobbyInfo)
+    internal UDPbroadcaster(LobbyInfo lobbyInfo) 
     {
-      LobbyInfo = lobbyInfo;
+      _LobbyInfo = lobbyInfo;
     }
-
-    public void Start()
+    public override void Start()
     {
       _UdpClient = new UdpClient();
       _UdpClient.EnableBroadcast = true;
@@ -26,7 +25,7 @@ namespace TCP_UDP_test.Networking.UDP
       BroadcastLobbyInfo();
     }
 
-    public void Stop()
+    public override void Stop()
     {
       BroadcastActive = false;
       _UdpClient?.Dispose();
@@ -47,7 +46,7 @@ namespace TCP_UDP_test.Networking.UDP
       }
     }
 
-    public void SendPackage(Packet packet)
+    public override void SendPackage(Packet packet)
     {
 
     }

@@ -35,12 +35,12 @@ namespace TCP_UDP_test.Commands.ConsoleCommands
       }
 
       LobbyInfo lobby = new LobbyInfo(args[2], args[3], IPAddress.Parse(args[4]), ushort.Parse(args[5]));
-      NetworkHandler.StartTCPSerer(lobby);
+      Network.StartTCPSerer(lobby);
     }
 
     private void StopLobby(string[] args)
     {
-      NetworkHandler.StopOpenNetwork();
+      Network.StopOpenNetwork();
     }
 
     private void JoinLobby(string[] args)
@@ -52,12 +52,12 @@ namespace TCP_UDP_test.Commands.ConsoleCommands
       }
 
       LobbyInfo lobby = new LobbyInfo("", "", IPAddress.Parse(args[2]), ushort.Parse(args[3]));
-      NetworkHandler.StartTCPClient(lobby);
+      Network.StartTCPClient(lobby);
     }
 
     private void LeaveLobby(string[] args)
     {
-      NetworkHandler.StopOpenNetwork();
+      Network.StopOpenNetwork();
     }
   }
 }
